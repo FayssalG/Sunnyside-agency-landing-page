@@ -71,7 +71,7 @@ h1, h2, h3 {
 .photography-section, .graphic-design-section {
   background-size: cover;
   background-position: top;
-  height: 90vh;
+  height: 75vh;
   display: inline-grid;
   align-content: flex-end;
   background-repeat: no-repeat;
@@ -106,12 +106,12 @@ h1, h2, h3 {
   }
   main .photography-section {
     width: 100%;
-    grid-column: 2/span 1;
+    grid-row: 4/5;
     background-image: url("../assets/desktop/image-graphic-design.jpg");
   }
   main .graphic-design-section {
     width: 100%;
-    grid-column: 1/span 1;
+    grid-column: 2/3;
     background-image: url("../assets/desktop/image-photography.jpg");
   }
   .transform-section, .standout-section {
@@ -382,8 +382,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  gap: 2rem;
+  height: 45vh;
+  gap: 1.5rem;
 }
 .footer-content .footer-logo {
   width: 150px;
