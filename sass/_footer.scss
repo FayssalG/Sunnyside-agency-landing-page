@@ -1,0 +1,95 @@
+@use 'variables' as *;
+
+.food-images{
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    div{
+        width: 50%;
+        min-height:200px ;
+        background-size: cover;
+    }
+
+    .milk{
+        background-image: url('../assets/mobile/image-gallery-milkbottles.jpg');
+    }
+    .orange{
+        background-image: url('../assets/mobile/image-gallery-orange.jpg');
+    }
+    .cone{
+        background-image: url('../assets/mobile/image-gallery-cone.jpg');
+    }
+    .sugar{
+        background-image: url('../assets/mobile/image-gallery-sugar-cubes.jpg');
+    }
+
+}
+
+.footer-content{
+    background-color: $light-cyan;
+    color: $dark-desaturated-cyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    gap: 2rem;
+    .footer-logo{
+        width: 150px;
+        
+        img{
+            width: 100%;
+        }
+    }
+
+    ul{
+        display: flex;
+        gap: 3rem;
+    }
+
+    .social-links{
+        margin-top: 3.5rem;
+        display: flex;
+        gap: 1.5rem;
+        a:hover{
+            svg path{
+                transition: fill  200ms ease;
+                fill: $white;
+            }
+        }
+    }
+
+    li:hover{
+        a {
+            transition: color 200ms ease;
+            color: $white;
+        }
+    }
+}
+
+
+
+@media (min-width:$desktop){
+    .food-images{
+        div{
+            width: 25%;
+            min-height:350px ;
+            background-size: cover;
+        }
+    
+        .milk{
+            background-image: url('../assets/desktop/image-gallery-milkbottles.jpg');
+        }
+        .orange{
+            background-image: url('../assets/desktop/image-gallery-orange.jpg');
+        }
+        .cone{
+            background-image: url('../assets/desktop/image-gallery-cone.jpg');
+        }
+        .sugar{
+            background-image: url('../assets/desktop/image-gallery-sugarcubes.jpg');
+        }
+    }
+    
+       
+}

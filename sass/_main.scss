@@ -1,0 +1,162 @@
+@use 'variables' as *;
+
+p,a{
+    font-family: $Barlaw;
+}
+h1,h2,h3 {
+    font-family: $Fraunces;
+}
+
+
+.transform-section , .standout-section , .graphic-design-section , .photography-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .image{
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .content{
+        max-width: 420px;
+        margin: auto;
+        padding: 5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        text-align: center;
+        
+        align-items: center;
+        h2{
+            font-family: $Fraunces;
+            font-size: 2.4rem;
+        }
+    
+        p{
+            line-height: 1.7rem;
+            font-family: $Barlaw;
+            color: $very-dark-grayish-blue;
+            font-size: 1rem;
+        }
+
+        a{
+            position: relative;
+            text-transform: uppercase;
+            font-family: $Fraunces;
+            &::after{
+                content: '';
+                z-index: -1;
+                position: absolute;
+                bottom: -2%;
+                left: -4%;
+                width: 108%;
+                height: 8px;
+                border-radius: 50px;
+                transition: opacity ease 200ms;
+            }
+        }
+
+        a:hover{
+            &::after{
+                opacity: 50%;
+            }
+        }
+    
+    }
+}
+
+.transform-section{
+    .content{
+        a::after{
+            background-color: $yellow;
+        }
+    }
+}
+
+.standout-section{
+    .content{
+        a::after{
+            background-color: $soft-red;
+        }
+    }
+}
+// Photography-section graphic-design-section
+.photography-section , .graphic-design-section{
+    
+    background-size: cover;
+    background-position: top;
+    height: 90vh;
+    display: inline-grid;
+    align-content: flex-end;
+    background-repeat: no-repeat;
+    
+    .content{
+        max-width: 350px;
+        height: 200px;
+        margin-bottom: 4rem ;
+        display: flex;
+        justify-content: flex-start;
+        color: $dark-desaturated-cyan;
+    }
+}
+.photography-section{
+    background-image: url('../assets/mobile/image-photography.jpg');
+}
+.graphic-design-section{
+    background-image: url('../assets/mobile/image-graphic-design.jpg');
+}
+
+
+
+// media querie
+@media (min-width: $desktop){
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .hero-section , .transform-section , .standout-section, .testimonials-section{
+            .content{
+                text-align: left;
+        
+            }
+            grid-column: 1/span 2;
+        }
+        
+        .photography-section{
+            width: 100%;
+            grid-column: 2 /span 1;
+            background-image: url('../assets/desktop/image-graphic-design.jpg');
+
+        }
+        .graphic-design-section{
+            width: 100%;
+            grid-column: 1/span 1;
+            background-image: url('../assets/desktop/image-photography.jpg');
+        }
+    }
+
+
+    .transform-section , .standout-section {
+        display: flex;
+        flex-direction: row;
+        .image{
+            width: 50%;
+            background-color: aqua;
+        }
+        .content{
+            width: 40%;
+            padding: 0;
+        }
+    }
+
+    .transform-section{
+        flex-direction: row-reverse;
+        
+    }
+
+    
+
+}

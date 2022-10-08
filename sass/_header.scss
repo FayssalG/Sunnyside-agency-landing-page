@@ -1,0 +1,133 @@
+@use  'variables' as *;
+*{
+    text-decoration: none;
+    color: unset;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header{
+    min-width: $mobile;
+    position: relative;
+    background-image: url('../assets/desktop/image-header.jpg');
+    padding: 0 2rem;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $Barlaw;
+    
+    .logo{
+        height: 40%;
+        img{
+            height: 100%;
+        }
+    }
+
+    nav{
+        display: none;
+        ul{
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            color: $very-dark-grayish-blue;  
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        li{
+            a{
+                transition: opacity ease 200ms;
+                &:hover{
+                    opacity: 50%;
+                }
+            }
+        }
+        .button{
+            font-family: $Fraunces;
+            padding: .7rem 2rem;
+            background-color: $yellow;
+            color: black;
+            border-radius: 40px;
+            transition: opacity ease 200ms;
+            &:hover{
+                opacity: 50%;
+            }
+        }
+    }
+
+    .nav-active{
+        position: absolute;
+        top: 5rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        background-color: $white;
+        width: 90%;
+        height: 270px;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+
+        transform-origin: right top;
+        animation: pop  normal 200ms;
+        &::after{
+            position: absolute;
+            top: -1.5rem;
+            right: 0;
+            border-left:40px solid  transparent  ;
+            border-bottom: 50px solid $white;
+            content: '';
+            width: 0;
+            height: 0;
+        }
+        
+    }
+}
+
+
+
+// menu animation 
+
+@keyframes pop {
+    0%{
+        transform: scale(0)
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media(min-width:$desktop){
+    header{
+        nav{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+            ul{
+                color: $white;
+                display: flex;
+                font-weight: 400;
+                flex-direction: row;
+                gap: 2rem;
+            }
+
+            .button{
+                font-family: $Fraunces;
+                padding: .7rem 1.5rem;
+                background-color: $white;
+                color: black;
+                border-radius: 40px;
+            }
+            
+        }
+        .hamburger{
+            display: none;
+        }
+    }
+}
