@@ -126,6 +126,10 @@ h1, h2, h3 {
     width: 40%;
     padding: 0;
   }
+  .transform-section .content a, .standout-section .content a {
+    text-align: left;
+    align-self: flex-start;
+  }
   .transform-section {
     flex-direction: row-reverse;
   }
