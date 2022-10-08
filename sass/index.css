@@ -342,7 +342,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 70vh;
+    height: 60vh;
   }
   .testimonials-section h2 {
     margin-bottom: 0;
@@ -412,7 +412,7 @@ body {
 @media (min-width: 900px) {
   .food-images div {
     width: 25%;
-    min-height: 350px;
+    min-height: 450px;
     background-size: cover;
   }
   .food-images .milk {
