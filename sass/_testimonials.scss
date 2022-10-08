@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .testimonials-section{
-    margin: 2rem 0;
+    margin: 4rem 0;
     text-align: center;
     h2{
         text-transform: uppercase;
@@ -57,9 +57,15 @@
 
 @media (min-width:$desktop){
     .testimonials-section{
-        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 70vh;
+        h2{
+            margin-bottom: .0;
+        }
         .testimonials-container{
-            height: 90%;
+            height: 80%;
             
             flex-direction: row;
         }
